@@ -14,9 +14,9 @@ rd_test = rd.ready_datas(f_path, sheet_neme).read_07_excel()
 
 for i in range(1, len(rd_test)):
     if rd_test[i][1] == "post":
-        t2 = get_api.testapi(rd_test[i][0], rd_test[i][1]).send()
+        t2 = get_api.api(rd_test[i][0], rd_test[i][1]).send()
     else:
-        t2 = get_api.testapi_next(rd_test[i][0], rd_test[i][1]).send()
+        t2 = get_api.api_next(rd_test[i][0], rd_test[i][1]).send()
     print("调用接口：%s  访问方式：%s   调用参数：%s" %(rd_test[i][0], rd_test[i][1], rd_test[i][2]))
     print(t2)
     print(t2["code"])
