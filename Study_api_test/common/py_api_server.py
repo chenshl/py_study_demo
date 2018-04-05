@@ -4,7 +4,9 @@
 # @date   : 2018/03/28 21:27
 # 提供可以被调用的接口
 
-class testapi(object):
+import requests
+
+class api(object):
 
     def __init__(self, server, parma):
         self.server = server
@@ -16,7 +18,7 @@ class testapi(object):
         return result_data
 
 
-class testapi_next(object):
+class api_next(object):
 
     def __init__(self, server, parma):
         self.server = server
@@ -25,4 +27,57 @@ class testapi_next(object):
     def send(self):
         result_data = {"result":"1", "code":"200", "messege":"你好，你get方式访问 %s 成功了！" %self.server}
         return result_data
+
+
+class douban_api(object):
+
+    def __init__(self, host, request_methord="get", parma=None):
+        self.host = host
+        self.request_methord = request_methord
+        self.parma = parma
+
+    def send(self):
+        if self.request_methord == "get":
+            url = self.host + "?" + self.parma
+            req = requests.get(url, verify=False)  # 关闭SSL验证
+            # print(req.status_code)
+            # print(req.text)
+            return [req.status_code, req.text]
+        else:
+            rstr = "请求方法错误，该接口只支持get方法。。。"
+            return rstr
+
+
+class baifubao_api(object):
+
+    def __init__(self, host, request_methord="get", parma=None):
+        self.host = host
+        self.request_methord = request_methord
+        self.parma = parma
+
+    def send(self):
+        if self.request_methord == "get":
+            url = self.host + "?" + self.parma
+            req = requests.get(url, verify=False)
+            return [req.status_code, req.text]
+        else:
+            rstr = "请求方法错误，该接口只支持get方法。。。"
+            return rstr
+
+
+
+if __name__ == "__main__":
+    # host = "https://api.douban.com/v2/book/search"
+    # parma = 'q="百年孤独"'
+    host = "https://www.baifubao.com/callback"
+    parma = "cmd=1059&callback=phone&phone=15823777272"
+    try:
+        # req1 = douban_api(host,"post", parma).send()
+        requests.packages.urllib3.disable_warnings()
+        reql = baifubao_api(host, "get", parma).send()
+        print(reql)
+        print(reql[1].strip("'"))
+    except:
+        print("请求结束")
+
 
