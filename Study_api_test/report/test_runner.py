@@ -3,6 +3,7 @@
 # @author : csl
 # @date   : 2018/03/28 21:38
 # 调用接口
+# 根据Excel表中的标识判断访问哪个接口
 
 import Study_api_test.common.py_api_server as get_api
 import Study_api_test.report.ready_datas as rd
