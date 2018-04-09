@@ -39,6 +39,7 @@ class douban_api(object):
     def send(self):
         if self.request_methord == "get":
             url = self.host + "?" + self.parma
+            requests.packages.urllib3.disable_warnings()  # 关闭HTTPS错误警告
             req = requests.get(url, verify=False)  # 关闭SSL验证
             # print(req.status_code)
             # print(req.text)
@@ -58,6 +59,7 @@ class baifubao_api(object):
     def send(self):
         if self.request_methord == "get":
             url = self.host + "?" + self.parma
+            requests.packages.urllib3.disable_warnings()
             req = requests.get(url, verify=False)
             return [req.status_code, req.text]
         else:
@@ -73,7 +75,6 @@ if __name__ == "__main__":
     parma = "cmd=1059&callback=phone&phone=15823777272"
     try:
         # req1 = douban_api(host,"post", parma).send()
-        requests.packages.urllib3.disable_warnings()
         reql = baifubao_api(host, "get", parma).send()
         print(reql)
         print(reql[1].strip("'"))

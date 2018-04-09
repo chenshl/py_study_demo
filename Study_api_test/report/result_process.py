@@ -10,7 +10,7 @@ import time
 
 class result_datas(object):
 
-    def __init__(self, api_name, code, sheet_name="测试报告", result_data=None):
+    def __init__(self, api_name, code, result_data=None, sheet_name="测试报告"):
         self.api_name = api_name
         self.code = code
         self.sheet_name = sheet_name

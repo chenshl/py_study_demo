@@ -33,7 +33,7 @@ class ready_datas_new(object):
 
     def __init__(self, excel_path, sheet_name):
         self.excel_path = excel_path
-        self.sheet_name = sheet_neme
+        self.sheet_name = sheet_name
         # 打开文件
         self.data = xlrd.open_workbook(self.excel_path)
         # 锁定sheet表格
