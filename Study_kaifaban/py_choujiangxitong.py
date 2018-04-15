@@ -8,7 +8,7 @@ import random
 import copy
 import time
 
-names = ['王帝萍','郭春霞','陈海燕','赵霞','珠海','肖春燕','刘佳']
+names = ['陈海燕','赵霞','珠海','肖春燕','刘佳']
 cnames = copy.deepcopy(names)
 i = 0
 while i < 2:

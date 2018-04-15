@@ -69,16 +69,15 @@ class baifubao_api(object):
 
 
 if __name__ == "__main__":
-    # host = "https://api.douban.com/v2/book/search"
-    # parma = 'q="百年孤独"'
-    host = "https://www.baifubao.com/callback"
-    parma = "cmd=1059&callback=phone&phone=15823777272"
-    try:
-        # req1 = douban_api(host,"post", parma).send()
-        reql = baifubao_api(host, "get", parma).send()
-        print(reql)
-        print(reql[1].strip("'"))
-    except:
-        print("请求结束")
+    host = "https://api.douban.com/v2/book/search"
+    parma = 'q="百年孤独"'
+    # host = "https://www.baifubao.com/callback"
+    # parma = "cmd=1059&callback=phone&phone=15823777272"
+
+    req1 = douban_api(host,"get", parma).send()
+    # reql = baifubao_api(host, "get", parma).send()
+    print(req1)
+    print(req1[1].strip("'"))
+
 
 
