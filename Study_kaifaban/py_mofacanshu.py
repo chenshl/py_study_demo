@@ -10,8 +10,8 @@ def args(f_arg, *args):
     for arg in args:
         print("another arg through *args:", arg)
 
-alist = [1, 'python', 'helloworld', 'test']
-atuple = (2, 'python', 'helloworld', 'test')
+alist = [1, 'python1', 'helloworld1', 'test1']
+atuple = (2, 'python2', 'helloworld2', 'test2')
 args(*alist)
 args(alist)
 args(*atuple)

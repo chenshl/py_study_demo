@@ -20,7 +20,7 @@ def success():
         email = request.form["email"]
         return render_template("success.html", email=email)
     else:
-        pass
+        return render_template("404.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=9002, debug=True)
