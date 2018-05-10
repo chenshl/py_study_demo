@@ -15,8 +15,7 @@ with engine.connect() as con:
     # 先删除users表
     con.execute('drop table if exists flask_users')
     # 创建一个users表，有自增长的id和name
-    con.execute('create table flask_users(id int primary key auto_increment,'
-    'name varchar(25))')
+    con.execute('create table flask_users(id int primary key auto_increment,''name varchar(25))')
     # 插入两条数据到表中
     con.execute('insert into flask_users(name) values("xiaoming")')
     con.execute('insert into flask_users(name) values("xiaotuo")')

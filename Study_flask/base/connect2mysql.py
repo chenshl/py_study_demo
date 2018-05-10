@@ -15,10 +15,10 @@ USERNAME = 'root'
 PASSWORD = '111111'
 DB_URI = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(USERNAME, PASSWORD, HOSTNAME, PORT, DATABASE)
 
-# 创建数据库引擎
-engine = create_engine(DB_URI)
-
-# 创建连接
-with engine.connect() as con:
-    rs = con.execute("SELECT 1")
-    print(rs.fetchone())
+# # 创建数据库引擎
+# engine = create_engine(DB_URI)
+#
+# # 创建连接
+# with engine.connect() as con:
+#     rs = con.execute("SELECT 1")
+#     print(rs.fetchone())
