@@ -7,7 +7,7 @@
 from flask import Flask, render_template, request
 from Study_flask.base.flask_object import app
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/home/", methods=["GET", "POST"])
 def index():
     return render_template("home.html")
 

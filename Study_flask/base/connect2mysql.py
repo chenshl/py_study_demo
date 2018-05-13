@@ -13,6 +13,7 @@ PORT = '3306'
 DATABASE = 'my_testsql'
 USERNAME = 'root'
 PASSWORD = '111111'
+# 数据库类型+数据库驱动名称://用户名:口令@机器地址:端口号/数据库名
 DB_URI = 'mysql+pymysql://{}:{}@{}:{}/{}'.format(USERNAME, PASSWORD, HOSTNAME, PORT, DATABASE)
 
 # # 创建数据库引擎
